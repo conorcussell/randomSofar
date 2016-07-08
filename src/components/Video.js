@@ -34,23 +34,36 @@ class Video extends Component {
     }, 1000);
   }
 
+  getArtist(string) {
+    if (!string.split('-')) {
+      return null
+    }
+    return string.split('-')[0].trim()
+  }
+  getTitle(string) {
+    if (!string.split('-')) {
+      return null
+    }
+    if (string.split('-')[1]) {
+      return string.split('-')[1].trim()
+    }
+
+  }
+
   render() {
-    const video = `https://www.youtube.com/embed/${this.props.video.uid}?modestbranding=1;controls=0;showinfo=0;rel=0;fs=1`
+    const video = `https://www.youtube.com/embed/${this.props.video.id.videoId}?modestbranding=1;controls=0;showinfo=0;rel=0;fs=1`
     if (!this.props.video) {
       return null;
     }
 
     return (
       <View>
-      <View style={{paddingTop: 20, paddingBottom: 20, paddingLeft: 20, paddingRight: 20}}>
+      <View style={{paddingTop: 20, paddingBottom: 20, paddingLeft: 20, paddingRight: 20, height: 100}}>
       <Text style={{color: '#fff', fontWeight: 'bold', fontSize: 20}}>
-        {this.props.video.artist}
+        {this.getArtist(this.props.video.snippet.title)}
       </Text>
       <Text style={{color: '#fff', fontWeight: 'bold', fontSize: 16}}>
-        {this.props.video.title}
-      </Text>
-      <Text style={{color: '#10ad52', fontWeight: 'bold', fontSize: 16, marginTop: 20}}>
-        {this.props.video.city}
+        {this.getTitle(this.props.video.snippet.title)}
       </Text>
       </View>
       <WebView
@@ -68,7 +81,6 @@ class Video extends Component {
       <View>
         <Text style={styles.text}>
           {this.state.action}
-
         </Text>
       </View>
       </View>

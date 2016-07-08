@@ -5,6 +5,7 @@
 	};
 	objectVersion = 46;
 	objects = {
+
 /* Begin PBXBuildFile section */
 		00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302AC1ABCB8CE00DB3ED1 /* libRCTActionSheet.a */; };
 		00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302BA1ABCB90400DB3ED1 /* libRCTGeolocation.a */; };
@@ -31,6 +32,8 @@
 		D1632E9E42CB4DE182F87128 /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 989EF4D0FE114B5CA8AB399A /* Ionicons.ttf */; };
 		DB232507CF41444DB36581C7 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 34B49F2BA91E4062A0158EC5 /* Zocial.ttf */; };
 		E13F28131D2FB3A00010491E /* YTPlayerView-iframe-player.html in Resources */ = {isa = PBXBuildFile; fileRef = E13F28121D2FB3A00010491E /* YTPlayerView-iframe-player.html */; };
+		E13F28491D2FF80C0010491E /* KDSocialShare.m in Sources */ = {isa = PBXBuildFile; fileRef = E13F28481D2FF80C0010491E /* KDSocialShare.m */; };
+		E13F28581D2FF8420010491E /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E13F28571D2FF8420010491E /* Social.framework */; };
 		FDCFE49697ED45968139631E /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B20F25D722124EBA9B31DBC7 /* Entypo.ttf */; };
 /* End PBXBuildFile section */
 
@@ -163,6 +166,9 @@
 		C605C31B11D74C3C9883AC3B /* Foundation.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Foundation.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
 		DB0C56A089EA44C6B1A6A439 /* libRNVectorIcons.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNVectorIcons.a; sourceTree = "<group>"; };
 		E13F28121D2FB3A00010491E /* YTPlayerView-iframe-player.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = "YTPlayerView-iframe-player.html"; path = "../node_modules/react-native-youtube/Assets/YTPlayerView-iframe-player.html"; sourceTree = "<group>"; };
+		E13F28481D2FF80C0010491E /* KDSocialShare.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KDSocialShare.m; path = "../node_modules/react-native-social-share/iOS/KDSocialShare.m"; sourceTree = "<group>"; };
+		E13F28561D2FF81F0010491E /* KDSocialShare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KDSocialShare.h; path = "../node_modules/react-native-social-share/iOS/KDSocialShare.h"; sourceTree = "<group>"; };
+		E13F28571D2FF8420010491E /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +183,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E13F28581D2FF8420010491E /* Social.framework in Frameworks */,
 				146834051AC3E58100842450 /* libReact.a in Frameworks */,
 				00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */,
 				00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */,
@@ -301,6 +308,8 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				E13F28561D2FF81F0010491E /* KDSocialShare.h */,
+				E13F28481D2FF80C0010491E /* KDSocialShare.m */,
 				146833FF1AC3E56700842450 /* React.xcodeproj */,
 				00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */,
 				00C302B51ABCB90400DB3ED1 /* RCTGeolocation.xcodeproj */,
@@ -328,6 +337,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				E13F28571D2FF8420010491E /* Social.framework */,
 				E13F28121D2FB3A00010491E /* YTPlayerView-iframe-player.html */,
 				13B07FAE1A68108700A75B9A /* App */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
@@ -630,6 +640,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
+				E13F28491D2FF80C0010491E /* KDSocialShare.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
