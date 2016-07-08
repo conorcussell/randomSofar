@@ -1,35 +1,24 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
 
 import {
-  Platform,
   StyleSheet,
   Text,
   View,
 } from 'react-native'
 
-const App = ({
-  instructions,
-}) => (
-  <View style={styles.container}>
-    <Text style={styles.welcome}>
-      Welcome to React Native!
-    </Text>
-    <Text style={styles.instructions}>
-      To get started, edit index.{Platform.OS}.js
-    </Text>
-    <Text style={styles.instructions}>
-      {instructions}
-    </Text>
-  </View>
-)
+import Spin from './Spin'
 
-App.propTypes = {
-  instructions: PropTypes.string,
-}
-
-App.defaultProps = {
-  ...Component.defaultProps,
-  instructions: 'Usage instructions not provided.',
+class App extends Component {
+  render() {
+    return (
+      <View style={styles.container}>
+        <Text style={styles.welcome}>
+          Sofar Sounds
+        </Text>
+        <Spin />
+      </View>
+    )
+  }
 }
 
 const styles = StyleSheet.create({
@@ -37,10 +26,11 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    backgroundColor: '#fff',
   },
   welcome: {
     fontSize: 20,
+    color: '#000',
     textAlign: 'center',
     margin: 10,
   },
