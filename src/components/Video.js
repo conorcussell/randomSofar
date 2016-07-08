@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { WebView, View, TouchableHighlight, Text, StyleSheet } from 'react-native'
-import Icon from 'react-native-vector-icons/FontAwesome';
+import Icon from 'react-native-vector-icons/FontAwesome'
 
 class Video extends Component {
   constructor(props) {
@@ -12,7 +12,7 @@ class Video extends Component {
 
   hate = () => {
     this.setState({
-      action: 'You hated it!'
+      action: 'You hated it! 💩'
     })
     setTimeout(() => {
       this.setState({
@@ -24,7 +24,7 @@ class Video extends Component {
 
   love = () => {
     this.setState({
-      action: 'You loved it!'
+      action: 'You loved it! 🎉'
     })
     setTimeout(() => {
       this.setState({
@@ -35,13 +35,24 @@ class Video extends Component {
   }
 
   render() {
-    const video = `https://www.youtube.com/embed/${this.props.video}?modestbranding=1;controls=0;showinfo=0;rel=0;fs=1`
+    const video = `https://www.youtube.com/embed/${this.props.video.uid}?modestbranding=1;controls=0;showinfo=0;rel=0;fs=1`
     if (!this.props.video) {
       return null;
     }
 
     return (
       <View>
+      <View style={{paddingTop: 20, paddingBottom: 20, paddingLeft: 20, paddingRight: 20}}>
+      <Text style={{color: '#fff', fontWeight: 'bold', fontSize: 20}}>
+        {this.props.video.artist}
+      </Text>
+      <Text style={{color: '#fff', fontWeight: 'bold', fontSize: 16}}>
+        {this.props.video.title}
+      </Text>
+      <Text style={{color: '#10ad52', fontWeight: 'bold', fontSize: 16, marginTop: 20}}>
+        {this.props.video.city}
+      </Text>
+      </View>
       <WebView
           source={{uri: video}}
           style={{width: 320, height: 200}}
@@ -57,6 +68,7 @@ class Video extends Component {
       <View>
         <Text style={styles.text}>
           {this.state.action}
+
         </Text>
       </View>
       </View>
@@ -79,7 +91,9 @@ const styles = StyleSheet.create({
   text: {
     textAlign: 'center',
     color: '#fff',
-    lineHeight: 30
+    fontWeight: 'bold',
+    lineHeight: 75,
+    fontSize: 30
   }
 })
 
